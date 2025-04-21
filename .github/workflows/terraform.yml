@@ -63,7 +63,7 @@ jobs:
         id: plan
         run: |
           terraform plan \
-            -out=tfplan \
+            #-out=tfplan \
             -input=false \
              
         continue-on-error: true

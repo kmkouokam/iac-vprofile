@@ -46,7 +46,7 @@ jobs:
         run: |
           terraform init \
             -backend-config="bucket=${{ env.BUCKET_TF_STATE }}" \
-            -backend-config="key=terraform.tfstate" \
+             
             -backend-config="region=${{ env.AWS_REGION }}"
 
       - name: Terraform format

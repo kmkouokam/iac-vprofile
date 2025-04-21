@@ -45,9 +45,9 @@ jobs:
         id: init
         run: |
           terraform init \
-            -backend-config="bucket=${{ env.BUCKET_TF_STATE }}" \
+            -backend-config="bucket=${{ BUCKET_TF_STATE }}" \
              
-            -backend-config="region=${{ env.AWS_REGION }}"
+            -backend-config="region=${{ AWS_REGION }}"
 
       - name: Terraform format
         id: fmt
@@ -63,9 +63,9 @@ jobs:
           terraform plan \
             -out=tfplan \
             -input=false \
-            -var="aws_region=${{ env.AWS_REGION }}" \
-            -var="eks_cluster=${{ env.EKS_CLUSTER }}" \
-            -var="bucket_tf_state=${{ env.BUCKET_TF_STATE }}"
+            -var="aws_region=${{ AWS_REGION }}" \
+            -var="eks_cluster=${{ EKS_CLUSTER }}" \
+            -var="bucket_tf_state=${{ BUCKET_TF_STATE }}"
         continue-on-error: true
          
       - name: Terraform Plan status

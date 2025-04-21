@@ -28,9 +28,11 @@ jobs:
     name: "apply Terraform code changes"
     runs-on: ubuntu-latest
     defaults:
-      run:
-          shell: bash
-          working-directory: ./terraform
+
+       run:
+           shell: bash
+           working-directory: ./terraform
+       
          
     steps:
       - name: Checkout the source code
